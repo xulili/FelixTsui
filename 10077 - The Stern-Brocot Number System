@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <windows.h>
+struct {int x;int y;}tree[10];
+int main(void)
+{
+  int a,b;
+while(scanf("%d%d",&a,&b)==2){
+if(a==1&&b==1) break;
+tree[0].x=0,tree[0].y=1;
+tree[1].x=1,tree[1].y=1;
+tree[2].x=1,tree[2].y=0;
+while(tree[1].x!=a||tree[1].y!=b){
+if(a*tree[1].y>b*tree[1].x){
+	printf("R");
+ tree[0]=tree[1]; 
+tree[1].x+=tree[2].x,tree[1].y+=tree[2].y;}
+ else{
+printf("L");
+tree[2]=tree[1];
+tree[1].x+=tree[0].x,tree[1].y+=tree[0].y;}
+ }printf("\n");}
+system("pause");
+	return 0;
+}
+
